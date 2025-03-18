@@ -20,7 +20,7 @@
 }
 
 #admin p {
-  font-family: "Jersey 10";
+  font-family: "Arial";
   font-size: 20px;
   margin-left: 20px;
   margin-top: 0;
@@ -29,28 +29,31 @@
 #inpName,
 #inpAge,
 #inpSpecies,
-#inpJob {
+#inpJob,
+#inpImg,
+#inpDesc {
   height: 20px;
   width: 200px;
   margin: 7px;
   border-radius: 10px;
   border: 5px double black;
-}
-
-#inpImg {
-  height: 20px;
-  width: 200px;
-  border-radius: 10px;
-  margin: 7px;
-  border: 5px double black;
+  padding-left: 5px;
 }
 
 #submit {
   margin: 7px;
+  margin-left: 125px;
   width: 100px;
   border-radius: 10px;
   border: 5px double black;
   height: 30px;
+}
+
+#submit:hover {
+  cursor: pointer;
+  background-color: aquamarine;
+  border-color: blue;
+  font-size: 15px;
 }
 
 #rightAd {
@@ -95,15 +98,15 @@
 
 .characterPreview {
   background-color: white;
-  height: 350px;
+  height: 320px;
   width: 170px;
   padding: 20px;
   border: 10px;
   border-radius: 10px;
   display: flex;
   flex-wrap: wrap;
-  font-family: "Jersey 10", sans-serif;
-  font-size: 22px;
+  font-family: Arial;
+  font-size: 15px;
 }
 
 .charStatName {
@@ -118,4 +121,5 @@
 .characterPreview img {
   width: 170px;
   height: 170px;
+  border-radius: 5px;
 }
