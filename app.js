@@ -1,7 +1,7 @@
 let inpName = document.getElementById("inpName");
 let inpImg = document.getElementById("inpImg");
 let inpAge = document.getElementById("inpAge");
-let inpSpecies = document.getElementById("inpSpecies");
+let inpGender = document.getElementById("inpGender");
 let inpJob = document.getElementById("inpJob");
 let inpDesc = document.getElementById("inpDesc");
 let main = document.getElementById("main");
@@ -37,18 +37,20 @@ getDocs(collection(db, "data"))
     let display = "";
     snap.forEach((doc) => {
       display += `      <div class="characterPreview">
-        <img src="${doc.data().img}" desc="${doc.data().desc}"/>
+        <img class="descContainer" src="${doc.data().img}" data-desc="${
+        doc.data().desc
+      }"/>
         <div class="charStatName">
           <p class="charName">Tên</p>
           <p class="charAge">Tuổi</p>
-          <p class="charSpecies">Chủng tộc</p>
+          <p class="charGender">Giới tính</p>
           <p class="charJob">Công việc</p>
         </div>
         <div class="charInfo">
-          <p class="charName">"${doc.data().name}"</p>
-          <p class="charAge">"${doc.data().age}"</p>
-          <p class="charSpecies">"${doc.data().species}"</p>
-          <p class="charJob">"${doc.data().job}"</p>
+          <p class="charName">${doc.data().name}</p>
+          <p class="charAge">${doc.data().age}</p>
+          <p class="charGender">${doc.data().gender}</p>
+          <p class="charJob">${doc.data().job}</p>
         </div>
       </div>`;
     });
@@ -57,12 +59,25 @@ getDocs(collection(db, "data"))
   })
   .catch((error) => alert(error));
 
+// Ấn vào hiện desc
+setTimeout(addImgThing, 3000);
+
+function addImgThing() {
+  let allEntries = document.querySelectorAll(".descContainer");
+  allEntries.forEach((indivImg) => {
+    indivImg.addEventListener("click", () => {
+      alert(indivImg.getAttribute("data-desc"));
+    });
+  });
+}
+
+// Tải nhân vật mới lên
 submit.addEventListener("click", function () {
   if (
     !inpName.value.trim() ||
     !inpImg.value.trim() ||
     !inpAge.value.trim() ||
-    !inpSpecies.value.trim() ||
+    !inpGender.value.trim() ||
     !inpJob.value.trim() ||
     !inpDesc.value.trim()
   ) {
@@ -72,7 +87,7 @@ submit.addEventListener("click", function () {
       img: inpImg.value.trim(),
       name: inpName.value.trim(),
       age: inpAge.value.trim(),
-      species: inpSpecies.value.trim(),
+      gender: inpGender.value.trim(),
       job: inpJob.value.trim(),
       desc: inpDesc.value.trim(),
     })
