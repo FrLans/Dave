@@ -38,9 +38,9 @@
 
 #admin {
   position: fixed;
-  top: 10%;
+  top: 5%;
   left: 0;
-  height: 90%;
+  height: 95%;
   width: 20%;
   background-color: #5e5df0;
   z-index: 2;
@@ -101,16 +101,6 @@
   font-size: 15px;
 }
 
-#rightAd {
-  position: fixed;
-  top: 15%;
-  right: 0;
-  height: 100%;
-  width: 20%;
-  background-color: yellow;
-  z-index: 0;
-}
-
 #main {
   position: fixed;
   top: 5%;
@@ -123,6 +113,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  padding-top: 50px;
 }
 
 ::-webkit-scrollbar {

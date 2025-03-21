@@ -84,7 +84,7 @@ submit.addEventListener("click", function () {
     !passBox.value.trim()
   ) {
     alert("Xin hãy nhập đầy đủ dữ liệu về nhân vật");
-  } else if (passBox.value != "memaybeo") {
+  } else if (passBox.value != "O5suKS59sHeYxHBWn") {
     alert("Bạn không có thẩm quyền");
   } else {
     addDoc(collection(db, "data"), {
