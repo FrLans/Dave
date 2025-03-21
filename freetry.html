@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create your own character!</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="headBanner">
+      <a href="./index.html">Trang chủ</a>
+      <a href="./main.html">Wiki của chúng tôi</a>
+    </div>
+    <div id="admin" class="advert">
+      <p>Tạo một nhân vật mới!</p>
+      <input type="text" id="inpImg" placeholder="Link ảnh" />
+      <input type="text" id="inpName" placeholder="Tên" />
+      <input type="text" id="inpAge" placeholder="Tuổi" />
+      <input type="text" id="inpGender" placeholder="Giới tính" />
+      <input type="text" id="inpJob" placeholder="Công việc" />
+      <textarea
+        class="inpDescClass"
+        id="inpDesc1"
+        spellcheck="false"
+        placeholder="Sơ lược ngoại hình"
+      ></textarea>
+      <textarea
+        class="inpDescClass"
+        id="inpDesc2"
+        spellcheck="false"
+        placeholder="Sơ lược tính cách"
+      ></textarea>
+      <textarea
+        class="inpDescClass"
+        id="inpDesc3"
+        spellcheck="false"
+        placeholder="Sơ lược cuộc sống"
+      ></textarea>
+      <textarea
+        class="inpDescClass"
+        id="inpDesc4"
+        spellcheck="false"
+        placeholder="Sơ lược năng lực"
+      ></textarea>
+      <button id="submit">Tải lên</button>
+    </div>
+    <div id="main"></div>
+    <div id="bottomAd" class="advert"></div>
+    <script type="module" src="./freetry.js"></script>
+  </body>
+</html>

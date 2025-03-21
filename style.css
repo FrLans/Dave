@@ -1,3 +1,35 @@
+* {
+  box-sizing: content-box;
+}
+
+#headBanner a {
+  background: #5e5df0;
+  border-radius: 999px;
+  box-shadow: #5e5df0 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: Arial;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+  text-decoration: none;
+  position: fixed;
+  z-index: 2;
+  top: 10px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
 #headBanner {
   position: fixed;
   top: 0;
@@ -10,12 +42,12 @@
 }
 #admin {
   position: fixed;
-  top: 15%;
+  top: 0;
   left: 0;
-  height: 70%;
+  height: 100%;
   width: 20%;
   background-color: yellow;
-  z-index: 0;
+  z-index: 2;
   align-content: center;
 }
 
@@ -30,23 +62,34 @@
 #inpAge,
 #inpGender,
 #inpJob,
-#inpImg,
-#inpDesc {
+#inpImg {
   height: 20px;
-  width: 200px;
-  margin: 7px;
+  width: 80%;
+  margin: 5px;
+  margin-left: 20px;
   border-radius: 10px;
   border: 5px double black;
   padding-left: 5px;
 }
 
+.inpDescClass {
+  height: 50px;
+  width: 80%;
+  margin: 5px;
+  margin-left: 20px;
+  border-radius: 10px;
+  border: 5px double black;
+  padding-left: 5px;
+  resize: none;
+  font-family: Arial;
+}
+
 #submit {
-  margin: 7px;
-  margin-left: 125px;
+  margin: 20px;
   width: 100px;
   border-radius: 10px;
   border: 5px double black;
-  height: 30px;
+  height: 20px;
 }
 
 #submit:hover {
@@ -81,15 +124,17 @@
   top: 15%;
   left: 20%;
   height: 70%;
-  width: 60%;
+  width: 80%;
   background-color: black;
   z-index: -1;
   overflow-y: scroll;
-  padding: 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  row-gap: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 0;
 }
 
 #main p {
@@ -98,29 +143,37 @@
 
 .characterPreview {
   background-color: white;
-  height: 270px;
-  width: 150px;
-  padding: 10px;
-  border: 10px;
+  height: 310px;
+  width: 165px;
+  padding: 12px;
   border-radius: 10px;
   display: flex;
   flex-wrap: wrap;
   font-family: Arial;
-  font-size: 13px;
+  font-size: 15px;
+  margin-top: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .charStatName {
-  width: 40%;
+  width: 25%;
 }
 
 .charInfo {
   text-align: right;
-  width: 60%;
+  width: 75%;
+}
+
+.charInfo p,
+.charStatName p {
+  height: 20px;
+  overflow: hidden;
 }
 
 .characterPreview img {
-  width: 150px;
-  height: 150px;
+  width: 165px;
+  height: 165px;
   border-radius: 5px;
 }
 

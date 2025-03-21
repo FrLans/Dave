@@ -3,7 +3,10 @@ let inpImg = document.getElementById("inpImg");
 let inpAge = document.getElementById("inpAge");
 let inpGender = document.getElementById("inpGender");
 let inpJob = document.getElementById("inpJob");
-let inpDesc = document.getElementById("inpDesc");
+let inpDesc1 = document.getElementById("inpDesc1");
+let inpDesc2 = document.getElementById("inpDesc2");
+let inpDesc3 = document.getElementById("inpDesc3");
+let inpDesc4 = document.getElementById("inpDesc4");
 let main = document.getElementById("main");
 let submit = document.getElementById("submit");
 
@@ -37,14 +40,12 @@ getDocs(collection(db, "data"))
     let display = "";
     snap.forEach((doc) => {
       display += `      <div class="characterPreview">
-        <img class="descContainer" src="${doc.data().img}" data-desc="${
-        doc.data().desc
-      }"/>
+        <img class="descContainer" src="${doc.data().img}"/>
         <div class="charStatName">
           <p class="charName">Tên</p>
           <p class="charAge">Tuổi</p>
-          <p class="charGender">Giới tính</p>
-          <p class="charJob">Công việc</p>
+          <p class="charGender">Giới</p>
+          <p class="charJob">Nghề</p>
         </div>
         <div class="charInfo">
           <p class="charName">${doc.data().name}</p>
@@ -59,17 +60,17 @@ getDocs(collection(db, "data"))
   })
   .catch((error) => alert(error));
 
-// Ấn vào hiện desc
-setTimeout(addImgThing, 3000);
+// // Ấn vào hiện desc
+// setTimeout(addImgThing, 3000);
 
-function addImgThing() {
-  let allEntries = document.querySelectorAll(".descContainer");
-  allEntries.forEach((indivImg) => {
-    indivImg.addEventListener("click", () => {
-      alert(indivImg.getAttribute("data-desc"));
-    });
-  });
-}
+// function addImgThing() {
+//   let allEntries = document.querySelectorAll(".descContainer");
+//   allEntries.forEach((indivImg) => {
+//     indivImg.addEventListener("click", () => {
+//       alert(indivImg.getAttribute("data-desc"));
+//     });
+//   });
+// }
 
 // Tải nhân vật mới lên
 submit.addEventListener("click", function () {
@@ -79,7 +80,10 @@ submit.addEventListener("click", function () {
     !inpAge.value.trim() ||
     !inpGender.value.trim() ||
     !inpJob.value.trim() ||
-    !inpDesc.value.trim()
+    !inpDesc1.value.trim() ||
+    !inpDesc2.value.trim() ||
+    !inpDesc3.value.trim() ||
+    !inpDesc4.value.trim()
   ) {
     alert("Xin hãy nhập đầy đủ dữ liệu về nhân vật");
   } else {
@@ -89,7 +93,10 @@ submit.addEventListener("click", function () {
       age: inpAge.value.trim(),
       gender: inpGender.value.trim(),
       job: inpJob.value.trim(),
-      desc: inpDesc.value.trim(),
+      desc1: inpDesc1.value.trim(),
+      desc2: inpDesc2.value.trim(),
+      desc3: inpDesc3.value.trim(),
+      desc4: inpDesc4.value.trim(),
     })
       .then(() => {
         window.location.reload();
