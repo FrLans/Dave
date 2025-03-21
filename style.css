@@ -5,13 +5,13 @@
 #headBanner {
   position: fixed;
   top: 0;
-  left: 20%;
+  left: 0;
   right: 0;
-  width: 80%;
+  width: 100%;
   padding: 20px;
   height: 5%;
-  background-color: green;
-  z-index: 1;
+  background-color: white;
+  z-index: 3;
 }
 
 #headBanner a {
@@ -38,11 +38,11 @@
 
 #admin {
   position: fixed;
-  top: 0;
+  top: 10%;
   left: 0;
-  height: 100%;
+  height: 90%;
   width: 20%;
-  background-color: yellow;
+  background-color: #5e5df0;
   z-index: 2;
   align-content: center;
 }
@@ -50,7 +50,12 @@
 #admin p {
   font-family: "Arial";
   font-size: 20px;
-  margin-left: 20px;
+  text-decoration: underline;
+  color: white;
+  text-align: center;
+  width: 200px;
+  margin-left: 50%;
+  transform: translate(-50%);
   margin-top: 0;
 }
 
