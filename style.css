@@ -2,6 +2,18 @@
   box-sizing: content-box;
 }
 
+#headBanner {
+  position: fixed;
+  top: 0;
+  left: 20%;
+  right: 0;
+  width: 80%;
+  padding: 20px;
+  height: 5%;
+  background-color: green;
+  z-index: 1;
+}
+
 #headBanner a {
   background: #5e5df0;
   border-radius: 999px;
@@ -21,25 +33,9 @@
   touch-action: manipulation;
   width: fit-content;
   word-break: break-word;
-  border: 0;
   text-decoration: none;
-  position: fixed;
-  z-index: 2;
-  top: 10px;
-  left: 50%;
-  transform: translate(-50%);
 }
 
-#headBanner {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 15%;
-  background-color: green;
-  z-index: 1;
-}
 #admin {
   position: fixed;
   top: 0;
@@ -62,7 +58,8 @@
 #inpAge,
 #inpGender,
 #inpJob,
-#inpImg {
+#inpImg,
+#passBox {
   height: 20px;
   width: 80%;
   margin: 5px;
@@ -109,21 +106,11 @@
   z-index: 0;
 }
 
-#bottomAd {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 15%;
-  background-color: green;
-  z-index: 1;
-}
-
 #main {
   position: fixed;
-  top: 15%;
+  top: 5%;
   left: 20%;
-  height: 70%;
+  height: 95%;
   width: 80%;
   background-color: black;
   z-index: -1;

@@ -9,6 +9,7 @@ let inpDesc3 = document.getElementById("inpDesc3");
 let inpDesc4 = document.getElementById("inpDesc4");
 let main = document.getElementById("main");
 let submit = document.getElementById("submit");
+let passBox = document.getElementById("passBox");
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
@@ -83,9 +84,12 @@ submit.addEventListener("click", function () {
     !inpDesc1.value.trim() ||
     !inpDesc2.value.trim() ||
     !inpDesc3.value.trim() ||
-    !inpDesc4.value.trim()
+    !inpDesc4.value.trim() ||
+    !passBox.value.trim()
   ) {
     alert("Xin hãy nhập đầy đủ dữ liệu về nhân vật");
+  } else if (passBox.value != "memaybeo") {
+    alert("Bomaygay");
   } else {
     addDoc(collection(db, "data"), {
       img: inpImg.value.trim(),
