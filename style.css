@@ -14,7 +14,8 @@
   z-index: 3;
 }
 
-#headBanner a {
+#headBanner a,
+#adOff {
   background: #5e5df0;
   border-radius: 999px;
   box-shadow: #5e5df0 0 10px 20px -10px;
@@ -163,4 +164,39 @@
 .characterPreview img:hover {
   scale: 1.05;
   cursor: pointer;
+}
+
+#detailedDesc {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 5;
+  background-color: #ffffff;
+}
+
+#adSample {
+  position: fixed;
+  height: 100%;
+  margin-left: 50%;
+  transform: translate(-50%, 0);
+  border-radius: 10px;
+}
+
+#adOff {
+  position: fixed;
+  top: 10px;
+  right: 160px;
+  z-index: 90;
+  height: 70px;
+  width: 70px;
+  border-radius: 100%;
+  border: solid 3px black;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+#adOff:hover {
+  filter: brightness(2);
 }

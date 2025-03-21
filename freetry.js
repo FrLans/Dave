@@ -6,7 +6,6 @@ let inpJob = document.getElementById("inpJob");
 let inpDesc = document.getElementById("inpDesc");
 let main = document.getElementById("main");
 let submit = document.getElementById("submit");
-let passBox = document.getElementById("passBox");
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";

@@ -7,6 +7,9 @@ let inpDesc = document.getElementById("inpDesc");
 let main = document.getElementById("main");
 let submit = document.getElementById("submit");
 let passBox = document.getElementById("passBox");
+let adOff = document.getElementById("adOff");
+let popUp = document.getElementById("popUp");
+let detailedDesc = document.getElementById("detailedDesc");
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
@@ -84,7 +87,7 @@ submit.addEventListener("click", function () {
     !passBox.value.trim()
   ) {
     alert("Xin hãy nhập đầy đủ dữ liệu về nhân vật");
-  } else if (passBox.value != "O5suKS59sHeYxHBWn") {
+  } else if (passBox.value != "vuadinh") {
     alert("Bạn không có thẩm quyền");
   } else {
     addDoc(collection(db, "data"), {
@@ -100,4 +103,9 @@ submit.addEventListener("click", function () {
       })
       .catch((error) => alert(error));
   }
+});
+
+adOff.addEventListener("click", function () {
+  popUp.style.display = "none";
+  detailedDesc.style.display = "none";
 });
