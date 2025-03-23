@@ -8,13 +8,19 @@
   left: 0;
   right: 0;
   width: 100%;
-  padding: 20px;
-  height: 5%;
+  padding: 0;
+  height: 150px;
   background-color: white;
   z-index: 3;
 }
 
-#headBanner a,
+#headBanner img {
+  height: 150px;
+  margin-left: 50%;
+  transform: translate(-50%);
+}
+
+#theTitle,
 #adOff,
 #closeDetail {
   background: #5e5df0;
@@ -38,24 +44,37 @@
   text-decoration: none;
 }
 
+#theTitle {
+  background-color: white;
+  width: 250px;
+  border: 3px black solid;
+  color: #5e5df0;
+  margin-left: 18px;
+}
+
+#theTitle:hover {
+  background-color: cyan;
+  color: black;
+}
+
 #admin {
   position: fixed;
-  top: 5%;
-  left: 0;
+  top: 100px;
+  left: 10px;
   height: 95%;
-  width: 20%;
+  width: 290px;
   background-color: #5e5df0;
   z-index: 2;
   align-content: center;
+  padding: 0;
 }
 
 #admin p {
   font-family: "Arial";
-  font-size: 20px;
-  text-decoration: underline;
+  font-size: 18px;
   color: white;
   text-align: center;
-  width: 200px;
+  width: 250px;
   margin-left: 50%;
   transform: translate(-50%);
   margin-top: 0;
@@ -68,8 +87,8 @@
 #inpImg,
 #passBox {
   height: 20px;
-  width: 80%;
-  margin: 5px;
+  width: 230px;
+  margin-bottom: 5px;
   margin-left: 20px;
   border-radius: 10px;
   border: 5px double black;
@@ -77,9 +96,9 @@
 }
 
 .inpDescClass {
-  height: 50px;
-  width: 80%;
-  margin: 5px;
+  height: 40px;
+  width: 230px;
+  margin-bottom: 5px;
   margin-left: 20px;
   border-radius: 10px;
   border: 5px double black;
@@ -88,15 +107,18 @@
   font-family: Arial;
 }
 
-#submit {
-  margin: 20px;
-  width: 100px;
+#submit,
+#home {
+  margin-left: 20px;
+  margin-bottom: 5px;
+  width: 230px;
   border-radius: 10px;
   border: 5px double black;
   height: 20px;
 }
 
-#submit:hover {
+#submit:hover,
+#home:hover {
   cursor: pointer;
   background-color: aquamarine;
   border-color: blue;
@@ -105,17 +127,16 @@
 
 #main {
   position: fixed;
-  top: 5%;
-  left: 20%;
-  height: 95%;
-  width: 80%;
+  top: 150px;
+  left: 310px;
+  height: calc(100% - 150px);
+  width: calc(100% - 320px);
   background-color: black;
   z-index: -1;
   overflow-y: scroll;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding-top: 50px;
 }
 
 ::-webkit-scrollbar {
@@ -162,8 +183,8 @@
   border-radius: 5px;
 }
 
-.characterPreview img:hover {
-  scale: 1.05;
+.characterPreview:hover {
+  background-color: rgb(169, 255, 255);
   cursor: pointer;
 }
 
@@ -180,6 +201,7 @@
 
 #adSample {
   width: 1000px;
+  border-radius: 15px;
 }
 
 #adOff {
@@ -204,6 +226,7 @@
   height: 500px;
   z-index: 99;
   display: none;
+  cursor: pointer;
 }
 
 #adOff:hover {

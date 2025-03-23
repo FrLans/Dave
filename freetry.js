@@ -10,6 +10,7 @@ let main = document.getElementById("main");
 let submit = document.getElementById("submit");
 let adOff = document.getElementById("adOff");
 let popUp = document.getElementById("popUp");
+let adSample = document.getElementById("adSample");
 let detailedDesc = document.getElementById("detailedDesc");
 
 // Import the functions you need from the SDKs you need
@@ -156,11 +157,18 @@ submit.addEventListener("click", function () {
       .catch((error) => alert(error));
   }
 });
-
 setTimeout(function () {
   popUp.style.display = "block";
+  adSample.addEventListener("click", function () {
+    window.location.href = "https://anchorguitars.nicepage.io/";
+  });
 }, 2000);
 
 adOff.addEventListener("click", function () {
   popUp.style.display = "none";
+});
+
+let home = document.getElementById("home");
+home.addEventListener("click", function () {
+  window.location.href = "./index.html";
 });

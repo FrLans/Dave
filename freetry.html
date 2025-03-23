@@ -8,8 +8,9 @@
   </head>
   <body>
     <div id="headBanner">
-      <a href="./index.html" id="theOther">Trang chủ</a>
-      <a href="./main.html" id="theTitle">DA Wiki</a>
+      <a href="./index.html"
+        ><img src="./Banner.png" alt="" title="Ấn vào để về DA Wiki"
+      /></a>
     </div>
     <div id="popUp">
       <img src="./Ad.jpg" id="adSample" alt="" />
@@ -17,8 +18,12 @@
     </div>
     <div id="detailedDesc"></div>
     <div id="admin" class="advert">
-      <p>Tạo nhân vật mới!</p>
-      <input type="text" id="inpImg" placeholder="Link ảnh" />
+      <p><strong>Tạo nhân vật mới!</strong></p>
+      <input
+        type="text"
+        id="inpImg"
+        placeholder="Link ảnh CDN - Hãy dùng imagekit.io"
+      />
       <input type="text" id="inpName" placeholder="Tên" />
       <input type="text" id="inpAge" placeholder="Tuổi" />
       <input type="text" id="inpGender" placeholder="Giới tính" />
@@ -42,6 +47,7 @@
         placeholder="Sơ lược cuộc đời"
       ></textarea>
       <button id="submit">Tải lên</button>
+      <button id="home">Về DistAno Wiki</button>
     </div>
     <div id="main"></div>
     <script type="module" src="./freetry.js"></script>

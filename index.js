@@ -9,9 +9,9 @@ let inpDesc3 = document.getElementById("inpDesc3");
 let main = document.getElementById("main");
 let submit = document.getElementById("submit");
 let adOff = document.getElementById("adOff");
+let adSample = document.getElementById("adSample");
 let popUp = document.getElementById("popUp");
 let detailedDesc = document.getElementById("detailedDesc");
-
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
 import {
@@ -159,6 +159,9 @@ submit.addEventListener("click", function () {
 
 setTimeout(function () {
   popUp.style.display = "block";
+  adSample.addEventListener("click", function () {
+    window.location.href = "https://anchorguitars.nicepage.io/";
+  });
 }, 2000);
 
 adOff.addEventListener("click", function () {
