@@ -130,15 +130,18 @@ adOff.addEventListener("click", function () {
 
 let beg = document.getElementById("beg");
 let qr = document.getElementById("QR");
+let cre = document.getElementById("cre");
 let qrState = false;
 
 beg.addEventListener("click", function () {
   if (!qrState) {
     qr.style.display = "block";
+    cre.style.display = "block";
     beg.innerText = "Không ủng hộ nữa";
     qrState = true;
   } else if (qrState) {
     qr.style.display = "none";
+    cre.style.display = "none";
     beg.innerText = "Ủng hộ nhà phát triển Web!";
     alert(">:(");
     qrState = false;

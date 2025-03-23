@@ -319,3 +319,12 @@ th {
   top: 0;
   display: none;
 }
+
+#cre {
+  position: fixed;
+  z-index: 80;
+  height: 100%;
+  top: 10px;
+  left: 310px;
+  display: none;
+}
