@@ -264,6 +264,7 @@
 
 #charRightOver p {
   font-size: 20px;
+  text-align: justify;
 }
 
 #charLeftOver img {
