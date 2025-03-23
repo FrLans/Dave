@@ -3,10 +3,11 @@ let inpImg = document.getElementById("inpImg");
 let inpAge = document.getElementById("inpAge");
 let inpGender = document.getElementById("inpGender");
 let inpJob = document.getElementById("inpJob");
-let inpDesc = document.getElementById("inpDesc");
+let inpDesc1 = document.getElementById("inpDesc1");
+let inpDesc2 = document.getElementById("inpDesc2");
+let inpDesc3 = document.getElementById("inpDesc3");
 let main = document.getElementById("main");
 let submit = document.getElementById("submit");
-let passBox = document.getElementById("passBox");
 let adOff = document.getElementById("adOff");
 let popUp = document.getElementById("popUp");
 let detailedDesc = document.getElementById("detailedDesc");
@@ -18,6 +19,8 @@ import {
   collection,
   addDoc,
   getDocs,
+  getDoc,
+  doc,
 } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js";
 
 // Your web app's Firebase configuration
@@ -40,7 +43,7 @@ getDocs(collection(db, "data"))
     // Add từng nhân vật vào từ dữ liệu có sẵn
     let display = "";
     snap.forEach((doc) => {
-      display += `      <div class="characterPreview">
+      display += `      <div class="characterPreview" data-id=${doc.id}>
         <img class="descContainer" src="${doc.data().img}" data-desc="${
         doc.data().desc
       }"/>
@@ -60,17 +63,65 @@ getDocs(collection(db, "data"))
     });
     // Load đống dữ liệu ra
     main.innerHTML = display;
+    addImgThing();
   })
   .catch((error) => alert(error));
 
 // Ấn vào hiện desc
-setTimeout(addImgThing, 3000);
 
 function addImgThing() {
-  let allEntries = document.querySelectorAll(".descContainer");
-  allEntries.forEach((indivImg) => {
-    indivImg.addEventListener("click", () => {
-      alert(indivImg.getAttribute("data-desc"));
+  let allEntries = document.querySelectorAll(".characterPreview");
+  allEntries.forEach((cell) => {
+    cell.addEventListener("click", async function () {
+      let charID = this.getAttribute("data-id");
+      let docRef = doc(db, "data", charID);
+      try {
+        let snap = await getDoc(docRef);
+        if (snap.exists()) {
+          detailedDesc.style.display = "flex";
+          detailedDesc.innerHTML = `
+          <div id="charLeftOver">
+            <img src="${snap.data().img}" alt="" />
+            <table>
+              <tr>
+                <th>Tên</th>
+                <td>${snap.data().name}</td>
+              </tr>
+              <tr>
+                <th>Tuổi</th>
+                <td>${snap.data().age}</td>
+              </tr>
+              <tr>
+                <th>Giới tính</th>
+                <td>${snap.data().gender}</td>
+              </tr>
+              <tr>
+                <th>Công việc</th>
+                <td>${snap.data().job}</td>
+              </tr>
+            </table>
+            <button id="closeDetail">Thoát trang thông tin</button>
+          </div>
+          <div id="charRightOver">
+            <h2>1. Ngoại hình</h2>
+            <p>${snap.data().desc1}</p>
+            <h2>2. Tính cách</h2>
+            <p>${snap.data().desc2}</p>
+            <h2>3. Cuộc đời</h2>
+            <p>${snap.data().desc3}</p>
+          </div>`;
+
+          document
+            .getElementById("closeDetail")
+            .addEventListener("click", function () {
+              detailedDesc.style.display = "none";
+            });
+        } else {
+          alert("Không tìm thấy nhân vật!");
+        }
+      } catch (error) {
+        console.error("Lỗi khi lấy dữ liệu:", error);
+      }
     });
   });
 }
@@ -83,12 +134,11 @@ submit.addEventListener("click", function () {
     !inpAge.value.trim() ||
     !inpGender.value.trim() ||
     !inpJob.value.trim() ||
-    !inpDesc.value.trim() ||
-    !passBox.value.trim()
+    !inpDesc1.value.trim() ||
+    !inpDesc2.value.trim() ||
+    !inpDesc3.value.trim()
   ) {
     alert("Xin hãy nhập đầy đủ dữ liệu về nhân vật");
-  } else if (passBox.value != "vuadinh") {
-    alert("Bạn không có thẩm quyền");
   } else {
     addDoc(collection(db, "data"), {
       img: inpImg.value.trim(),
@@ -96,7 +146,9 @@ submit.addEventListener("click", function () {
       age: inpAge.value.trim(),
       gender: inpGender.value.trim(),
       job: inpJob.value.trim(),
-      desc: inpDesc.value.trim(),
+      desc1: inpDesc1.value.trim(),
+      desc2: inpDesc2.value.trim(),
+      desc3: inpDesc3.value.trim(),
     })
       .then(() => {
         window.location.reload();
@@ -105,7 +157,10 @@ submit.addEventListener("click", function () {
   }
 });
 
+setTimeout(function () {
+  popUp.style.display = "block";
+}, 2000);
+
 adOff.addEventListener("click", function () {
   popUp.style.display = "none";
-  detailedDesc.style.display = "none";
 });

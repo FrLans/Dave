@@ -15,7 +15,8 @@
 }
 
 #headBanner a,
-#adOff {
+#adOff,
+#closeDetail {
   background: #5e5df0;
   border-radius: 999px;
   box-shadow: #5e5df0 0 10px 20px -10px;
@@ -174,29 +175,91 @@
   width: 100%;
   z-index: 5;
   background-color: #ffffff;
+  display: none;
 }
 
 #adSample {
-  position: fixed;
-  height: 100%;
-  margin-left: 50%;
-  transform: translate(-50%, 0);
-  border-radius: 10px;
+  width: 1000px;
 }
 
 #adOff {
   position: fixed;
   top: 10px;
-  right: 160px;
-  z-index: 90;
-  height: 70px;
-  width: 70px;
-  border-radius: 100%;
-  border: solid 3px black;
-  background-color: #ffffff;
+  left: 930px;
+  height: 60px;
+  font-size: 20px;
+  width: 60px;
+  background-color: transparent;
+  border: none;
   text-align: center;
+  z-index: 20;
+  box-shadow: none;
+}
+
+#popUp {
+  position: fixed;
+  top: 70px;
+  left: 50%;
+  transform: translate(-50%);
+  height: 500px;
+  z-index: 99;
+  display: none;
 }
 
 #adOff:hover {
   filter: brightness(2);
+}
+
+#charLeftOver {
+  height: 100%;
+  width: 30%;
+  margin: 30px;
+  font-family: Arial;
+}
+
+#charRightOver {
+  width: 70%;
+  height: 90%;
+  margin-top: 50px;
+  margin-right: 200px;
+  font-family: Arial;
+  overflow-y: scroll;
+}
+
+#charRightOver p {
+  font-size: 20px;
+  text-align: justify;
+}
+
+#charLeftOver img {
+  margin: 30px;
+  margin-left: 50px;
+  width: 300px;
+  height: 300px;
+  border-radius: 5px;
+}
+
+table {
+  margin-left: 50px;
+  font-family: Arial;
+  border-collapse: collapse;
+  width: 300px;
+}
+
+td,
+th {
+  border: 1px solid black;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  width: 80px;
+  background-color: #dddddd;
+}
+
+#closeDetail {
+  border: 2px solid black;
+  margin-top: 20px;
+  margin-left: 100px;
 }
