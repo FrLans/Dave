@@ -267,7 +267,8 @@
 }
 
 #charLeftOver img {
-  margin: 30px;
+  margin-top: 15px;
+  margin-bottom: 10px;
   margin-left: 50%;
   transform: translate(-50%, 0);
   width: 300px;
@@ -298,7 +299,7 @@ th {
 
 #closeDetail {
   border: 2px solid black;
-  margin-top: 20px;
+  margin-top: 15px;
   margin-left: 50%;
   width: 220px;
   transform: translate(-50%, 0);
