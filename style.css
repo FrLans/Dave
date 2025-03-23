@@ -22,7 +22,8 @@
 
 #theTitle,
 #adOff,
-#closeDetail {
+#closeDetail,
+#beg {
   background: #5e5df0;
   border-radius: 999px;
   box-shadow: #5e5df0 0 10px 20px -10px;
@@ -44,7 +45,8 @@
   text-decoration: none;
 }
 
-#theTitle {
+#theTitle,
+#beg {
   background-color: white;
   width: 250px;
   border: 3px black solid;
@@ -52,9 +54,15 @@
   margin-left: 18px;
 }
 
-#theTitle:hover {
+#theTitle:hover,
+#beg:hover {
   background-color: cyan;
   color: black;
+}
+
+#beg {
+  height: 50px;
+  margin-top: 20px;
 }
 
 #admin {
@@ -299,4 +307,13 @@ th {
 #closeDetail:hover {
   background-color: cyan;
   color: black;
+}
+
+#QR {
+  position: fixed;
+  z-index: 99;
+  width: 290px;
+  left: 10px;
+  top: 0;
+  display: none;
 }
