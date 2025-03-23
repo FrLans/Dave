@@ -1,13 +1,4 @@
-let inpName = document.getElementById("inpName");
-let inpImg = document.getElementById("inpImg");
-let inpAge = document.getElementById("inpAge");
-let inpGender = document.getElementById("inpGender");
-let inpJob = document.getElementById("inpJob");
-let inpDesc1 = document.getElementById("inpDesc1");
-let inpDesc2 = document.getElementById("inpDesc2");
-let inpDesc3 = document.getElementById("inpDesc3");
 let main = document.getElementById("main");
-let submit = document.getElementById("submit");
 let adOff = document.getElementById("adOff");
 let adSample = document.getElementById("adSample");
 let popUp = document.getElementById("popUp");
@@ -125,37 +116,6 @@ function addImgThing() {
     });
   });
 }
-
-// Tải nhân vật mới lên
-submit.addEventListener("click", function () {
-  if (
-    !inpName.value.trim() ||
-    !inpImg.value.trim() ||
-    !inpAge.value.trim() ||
-    !inpGender.value.trim() ||
-    !inpJob.value.trim() ||
-    !inpDesc1.value.trim() ||
-    !inpDesc2.value.trim() ||
-    !inpDesc3.value.trim()
-  ) {
-    alert("Xin hãy nhập đầy đủ dữ liệu về nhân vật");
-  } else {
-    addDoc(collection(db, "data"), {
-      img: inpImg.value.trim(),
-      name: inpName.value.trim(),
-      age: inpAge.value.trim(),
-      gender: inpGender.value.trim(),
-      job: inpJob.value.trim(),
-      desc1: inpDesc1.value.trim(),
-      desc2: inpDesc2.value.trim(),
-      desc3: inpDesc3.value.trim(),
-    })
-      .then(() => {
-        window.location.reload();
-      })
-      .catch((error) => alert(error));
-  }
-});
 
 setTimeout(function () {
   popUp.style.display = "block";

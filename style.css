@@ -5,13 +5,13 @@
 #headBanner {
   position: fixed;
   top: 0;
-  left: 0;
+  left: 300px;
   right: 0;
-  width: 100%;
+  width: calc(100% - 300px);
   padding: 0;
   height: 150px;
   background-color: white;
-  z-index: 3;
+  z-index: 1;
 }
 
 #headBanner img {
@@ -59,9 +59,9 @@
 
 #admin {
   position: fixed;
-  top: 100px;
+  top: 0;
   left: 10px;
-  height: 95%;
+  height: 100%;
   width: 290px;
   background-color: #5e5df0;
   z-index: 2;
@@ -129,14 +129,15 @@
   position: fixed;
   top: 150px;
   left: 310px;
-  height: calc(100% - 150px);
-  width: calc(100% - 320px);
+  height: calc(100% - 180px);
+  width: calc(100% - 340px);
   background-color: black;
   z-index: -1;
   overflow-y: scroll;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  border: 10px solid black;
 }
 
 ::-webkit-scrollbar {
@@ -192,10 +193,11 @@
   position: fixed;
   top: 0;
   left: 0;
-  height: 100%;
-  width: 100%;
+  height: calc(100% - 40px);
+  width: calc(100% - 40px);
   z-index: 5;
   background-color: #ffffff;
+  border: solid #5e5df0 20px;
   display: none;
 }
 
@@ -234,36 +236,40 @@
 }
 
 #charLeftOver {
-  height: 100%;
-  width: 30%;
-  margin: 30px;
+  height: calc(100% - 20px);
+  width: calc(30% - 20px);
+  padding: 30px;
   font-family: Arial;
+  border-right: #5e5df0 20px solid;
 }
 
 #charRightOver {
-  width: 70%;
-  height: 90%;
+  width: calc(70% - 20px);
+  height: calc(100% - 90px);
   margin-top: 50px;
-  margin-right: 200px;
+  margin-bottom: 50px;
+  margin-left: 50px;
+  padding-right: 50px;
   font-family: Arial;
   overflow-y: scroll;
 }
 
 #charRightOver p {
   font-size: 20px;
-  text-align: justify;
 }
 
 #charLeftOver img {
   margin: 30px;
-  margin-left: 50px;
+  margin-left: 50%;
+  transform: translate(-50%, 0);
   width: 300px;
   height: 300px;
   border-radius: 5px;
 }
 
 table {
-  margin-left: 50px;
+  margin-left: 50%;
+  transform: translate(-50%, 0);
   font-family: Arial;
   border-collapse: collapse;
   width: 300px;
@@ -278,11 +284,19 @@ th {
 
 th {
   width: 80px;
-  background-color: #dddddd;
+  background-color: #5e5df0;
+  color: white;
 }
 
 #closeDetail {
   border: 2px solid black;
   margin-top: 20px;
-  margin-left: 100px;
+  margin-left: 50%;
+  width: 220px;
+  transform: translate(-50%, 0);
+}
+
+#closeDetail:hover {
+  background-color: cyan;
+  color: black;
 }
