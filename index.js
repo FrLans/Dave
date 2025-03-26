@@ -130,10 +130,10 @@ adOff.addEventListener("click", function () {
 
 let beg = document.getElementById("beg");
 let qr = document.getElementById("QR");
-let cre = document.getElementById("cre");
 let qrState = false;
 
 beg.addEventListener("click", function () {
+  let cre = document.getElementsByClassName("cre");
   if (!qrState) {
     qr.style.display = "block";
     cre.style.display = "block";
