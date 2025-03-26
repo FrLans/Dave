@@ -133,15 +133,12 @@ let qr = document.getElementById("QR");
 let qrState = false;
 
 beg.addEventListener("click", function () {
-  let cre = document.getElementsByClassName("cre");
   if (!qrState) {
     qr.style.display = "block";
-    cre.style.display = "block";
     beg.innerText = "Không ủng hộ nữa";
     qrState = true;
   } else if (qrState) {
     qr.style.display = "none";
-    cre.style.display = "none";
     beg.innerText = "Ủng hộ nhà phát triển Web!";
     alert(">:(");
     qrState = false;
