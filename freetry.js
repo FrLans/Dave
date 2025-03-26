@@ -141,6 +141,7 @@ submit.addEventListener("click", function () {
   ) {
     alert("Xin hãy nhập đầy đủ dữ liệu về nhân vật");
   } else {
+    submit.disabled = true;
     addDoc(collection(db, "data"), {
       img: inpImg.value.trim(),
       name: inpName.value.trim(),
@@ -172,3 +173,7 @@ let home = document.getElementById("home");
 home.addEventListener("click", function () {
   window.location.href = "./index.html";
 });
+
+alert(
+  "Trang web này là sản phẩm của cộng đồng, và bất kỳ ai đều có thể đăng bài. Xin đừng đăng nội dung thiếu văn hoá, không phù hợp với chuẩn mực cộng đồng. Nhà phát triển sẽ cố gắng xoá bỏ những nội dung vi phạm, nhưng không thể đảm bảo."
+);
